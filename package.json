@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "build": "babel index.js -d dist",
+    "dev": "nodemon --exec babel-node index.js",
+    "start" :"yarn run build && node dist/index.js"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -10,15 +15,14 @@
     "nodemon": "^2.0.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.0"
   },
-  "scripts": {
-    "dev": "nodemon --exec babel-node index.js"
-  },
-   "babel":{ "presets": [
-        "@babel/preset-env"
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
     ]
-}
+  }
 }
